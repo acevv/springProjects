@@ -33,4 +33,10 @@ public class TestController {
 	public String adminAccess() {
 		return "Admin Board.";
 	}
+	
+	@GetMapping("/student")
+	@PreAuthorize("hasRole('STUDENT')")
+	public String studentAccess() {
+		return "Hello student";
+	}
 }
